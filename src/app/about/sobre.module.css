@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  background-color: #262626;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: 2rem;
+}
+
+.container_img {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.p_sobre {
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.box_sobre {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1080px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .p_sobre {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}

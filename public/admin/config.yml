@@ -1,0 +1,180 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow # Para fazer um esquema de revisão de novas edições
+media_folder: 'public/uploads' # Onde os arquivos de mídia serão armazenados
+public_folder: '/uploads' # Onde a parte de mídia vai poder ser acessada
+
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '_'
+
+search: false
+locale: 'pt'
+
+collections:
+  # PAGES--------------------------------------------------------------------------------------------------------
+  - label: 'Páginas'
+    name: 'paginas'
+    files:
+      - label: 'Home'
+        name: 'home'
+        file: 'content/pages/home.json'
+        extension: 'json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+          - label: 'Vídeo'
+            name: 'video'
+            widget: 'file'
+          - { label: 'Texto', name: 'text', widget: 'string' }
+
+      - label: 'Sobre'
+        name: 'about'
+        file: 'content/pages/about.json'
+        extension: 'json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+          - { label: 'Imagem', name: 'image', widget: 'image' }
+          - { label: 'Texto', name: 'text', widget: 'string' }
+
+      - label: 'Serviços'
+        name: 'servicos'
+        file: 'content/pages/servicos.json'
+        extension: 'json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+
+      - label: 'Projetos'
+        name: 'projects'
+        file: 'content/pages/projects.json'
+        extension: 'json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+
+      - label: 'Contato'
+        name: 'contact'
+        file: 'content/pages/contact.json'
+        extension: 'json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+
+  # OBJECTS --------------------------------------------------------------------------------------------------------
+
+  - label: 'Projetos'
+    name: 'projects'
+    extension: 'json'
+    description: 'Apresentação do projeto.'
+    folder: 'content/projects'
+    create: true
+    slug: '{{fields.title}}'
+    editor:
+      preview: false
+    fields:
+      - label: 'Título'
+        name: 'title'
+        widget: 'string'
+        pattern: ['^.{1,30}$', 'Máximo 30 carateres.']
+      - label: 'Imagem Principal'
+        name: 'mainImage'
+        widget: 'image'
+        description: 'Imagem principal que será exibida como destaque.'
+      - label: 'Imagens Projeto'
+        name: 'projectImages'
+        widget: 'list'
+        min: 3
+        max: 10
+        fields:
+          - { label: 'Imagem', name: 'image', widget: 'image' }
+
+  - label: 'Serviços'
+    name: 'services'
+    extension: 'json'
+    description: 'Serviços da Relab Jr'
+    folder: 'content/services'
+    create: true
+    slug: '{{fields.service}}'
+    editor:
+      preview: false
+    fields:
+      - {
+          label: 'Serviço',
+          name: 'service',
+          widget: 'string',
+          pattern: ['^.{1,35}$', 'Máximo 35 carateres.'],
+        }
+      - { label: 'Imagem', name: 'image', widget: 'image' }
+      - {
+          label: 'Descrição',
+          name: 'description',
+          widget: 'text',
+          pattern: ['^.{1,500}$', 'Máximo 500 carateres.'],
+        }
+
+  - label: 'Navbar e Footer'
+    name: 'navFooter'
+    editor:
+      preview: false
+    files:
+      - label: 'Navbar e Footer'
+        name: 'navbar'
+        file: 'content/navFooter/navFooter.json'
+        extension: 'json'
+        format: 'json'
+        fields:
+          - { label: 'Logo Navbar', name: 'logoNavbar', widget: 'image' }
+          - {
+              label: 'Logo Navbar Mobile',
+              name: 'logoNavbarMobile',
+              widget: 'image',
+            }
+          - { label: 'Logo Footer', name: 'logoFooter', widget: 'image' }
+          - { label: 'Copyright ©', name: 'copy', widget: 'string' }
+
+  - label: 'Formulário'
+    name: 'form'
+    editor:
+      preview: false
+    files:
+      - label: 'Formulários'
+        name: 'form'
+        file: 'content/form/form.json'
+        extension: 'json'
+        format: 'json'
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string' }
+
+  - label: 'Contato'
+    name: 'contact'
+    editor:
+      preview: false
+    files:
+      - label: 'Contato'
+        name: 'contact'
+        file: 'content/contact/contact.json'
+        extension: 'json'
+        format: 'json'
+        fields:
+          - { label: 'Nome', name: 'name', widget: 'string' }
+          - { label: 'Linkedin', name: 'linkedin', widget: 'string' }
+          - { label: 'Email', name: 'email', widget: 'string' }
+          - { label: 'Instagram', name: 'instagram', widget: 'string' }
+          - { label: 'Celular', name: 'cellphone', widget: 'string' }
+          - { label: 'Facebook', name: 'facebook', widget: 'string' }
+          - { label: 'Endereço', name: 'address', widget: 'string' }

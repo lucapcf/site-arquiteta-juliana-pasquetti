@@ -1,0 +1,162 @@
+.mainContainer {
+  color: white;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #262626;
+}
+
+.logo {
+  text-align: center;
+}
+
+.value_form {
+  color: red;
+  font-weight: 300;
+}
+
+.title {
+  padding-top: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.formAndContact {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: space-around;
+}
+
+.formContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.doubleInput {
+  display: flex;
+  justify-content: space-between;
+}
+
+.smallField {
+  width: 45%;
+}
+
+.smallField input {
+  color: black;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+  margin-left: 0px;
+  margin-top: 2rem;
+}
+
+.smallField .input_error {
+  outline: 1px solid red;
+}
+
+.smallField .error_message {
+  color: red;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.smallField input::placeholder {
+  color: black;
+  font-weight: 300;
+}
+
+.mediumField {
+  width: 100%;
+}
+
+.mediumField input {
+  color: black;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+  margin-left: 0px;
+  margin-top: 2rem;
+}
+
+.mediumField .input_error {
+  outline: 1px solid red;
+}
+
+.mediumField .error_message {
+  color: red;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.mediumField input::placeholder {
+  color: black;
+  font-weight: 300;
+}
+
+.mediumField button {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.largeField {
+  width: 100%;
+}
+
+.largeField textarea {
+  color: black;
+  font-weight: 400;
+  width: 100%;
+  height: 200px;
+  margin-left: 0px;
+  margin-top: 2rem;
+}
+
+.largeField .input_error {
+  outline: 1px solid red;
+}
+
+.largeField .error_message {
+  color: red;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.largeField textarea::placeholder {
+  color: black;
+  font-weight: 300;
+}
+
+.contactContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1400px) {
+  .formAndContact {
+    flex-direction: column;
+  }
+
+  .largeField textarea {
+    height: 100px;
+  }
+
+  .contactContainer {
+    display: none;
+  }
+
+  .doubleInput {
+    flex-direction: column;
+  }
+
+  .smallField {
+    width: 100%;
+  }
+}

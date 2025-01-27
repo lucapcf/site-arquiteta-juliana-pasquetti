@@ -1,0 +1,15 @@
+{
+  "title": "Casa Criciúma",
+  "mainImage": "/uploads/dsc03894.jpg",
+  "projectImages": [
+    {
+      "image": "/uploads/12.jpg"
+    },
+    {
+      "image": "/uploads/13.jpg"
+    },
+    {
+      "image": "/uploads/9.jpg"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Casa Santo Amaro da Imperatriz",
+  "mainImage": "/uploads/1.jpg",
+  "projectImages": [
+    {
+      "image": "/uploads/2.jpg"
+    },
+    {
+      "image": "/uploads/3.jpg"
+    },
+    {
+      "image": "/uploads/implantacao1.jpg"
+    },
+    {
+      "image": "/uploads/fachada_sul.jpg"
+    },
+    {
+      "image": "/uploads/oeste_sul.jpg"
+    }
+  ]
+}

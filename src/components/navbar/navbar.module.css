@@ -1,0 +1,123 @@
+.logo {
+  border-radius: 10%;
+}
+
+.cabecalho {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  top: 0;
+  position: sticky;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 2rem;
+  background-color: black;
+  color: white;
+}
+
+.navbar {
+  margin-left: auto;
+}
+
+.anchorStuff a {
+  margin: 0 1rem;
+  font-weight: 400;
+  color: #d9d9d9;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: 0.4s ease;
+}
+
+.anchorStuff a:hover {
+  color: white;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.cabecalho .navBtn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+.cabecalho .navbar {
+  display: flex;
+  align-items: center;
+}
+
+.socialNetworks {
+  color: #f2c12e !important;
+  font-size: 1.5em;
+  margin-top: 150px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .cabecalho .navBtn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.8rem;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .cabecalho .navBtn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .cabecalho .navbar {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: black;
+    transition: 1s;
+    z-index: 999;
+
+    border-bottom: 5px solid black;
+    border-image: linear-gradient(to right, red, blue);
+  }
+
+  .cabecalho .responsiveNav {
+    transform: translateY(100vh);
+    width: 100%;
+  }
+
+  .navbar .navCloseBtn {
+    position: absolute;
+    top: 2rem;
+    color: white;
+    right: 2rem;
+  }
+
+  .navbar .navRelabBtn {
+    position: absolute;
+    top: 2rem;
+    right: auto;
+    left: auto;
+  }
+
+  .navbar a {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,99 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #262626;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.serviceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 3rem auto;
+  color: white;
+}
+
+.imageRightContainer,
+.imageLeftContainer,
+.imageMobileContainer {
+  align-self: center;
+  width: 30%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.imageMobileContainer {
+  display: none;
+}
+
+.textContainer {
+  width: 60%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.underBar {
+  background-color: white;
+  width: 100%;
+  height: 3px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.descriptionContainer {
+  color: white;
+  text-align: justify;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .serviceContainer {
+    justify-content: center;
+    text-align: center;
+    display: block;
+  }
+
+  .imageMobileContainer {
+    display: block;
+    position: relative;
+  }
+
+  .imageRightContainer {
+    display: none;
+  }
+
+  .imageLeftContainer,
+  .imageMobileContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    height: fit-content;
+    margin: auto;
+  }
+
+  .textContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .titleContainer {
+    text-align: center;
+  }
+}
