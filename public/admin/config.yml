@@ -109,13 +109,13 @@ collections:
     description: 'Serviços da Relab Jr'
     folder: 'content/services'
     create: true
-    slug: '{{fields.service}}'
+    slug: '{{fields.title}}'
     editor:
       preview: false
     fields:
       - {
           label: 'Serviço',
-          name: 'service',
+          name: 'title',
           widget: 'string',
           pattern: ['^.{1,35}$', 'Máximo 35 carateres.'],
         }

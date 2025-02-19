@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './servicesGrid.module.css';
 import { Service } from '../../app/services/page';
 
-interface ServiceGridProps {
+interface SercicesGridProps {
   services: Service[];
 }
 
@@ -64,7 +64,7 @@ function ServiceR({ service }: { service: Service }) {
   );
 }
 
-const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
+const SercicesGrid: React.FC<SercicesGridProps> = ({ services }) => {
   return (
     <>
       <ul className={styles.mainContainer}>
@@ -83,4 +83,4 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
   );
 };
 
-export default ServiceGrid;
+export default SercicesGrid;
