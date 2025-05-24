@@ -75,7 +75,8 @@ export default async function RootLayout({
           async
           src='https://identity.netlify.com/v1/netlify-identity-widget.js'
         />
-        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
       </head>
       <body>
         <Navbar
