@@ -31,9 +31,7 @@ export default async function Home() {
           </video>
         </div>
       </center>
-      <div className={styles.text}>
-        <h1>{home.text}</h1>
-      </div>
+      <div className={styles.text}>{home.text}</div>
     </>
   );
 }

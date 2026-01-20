@@ -18,8 +18,8 @@ const Footer: React.FC<FooterProps> = ({ logo, copy, contact }) => {
           <div className={styles.box_footer_logo}>
             <Image
               src={logo}
-              width={75}
-              height={75}
+              width={150}
+              height={150}
               alt='Logo'
               className={styles.logo}
             />
