@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './footer.module.css';
-import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { Contact } from '@/types';
 
 interface FooterProps {
@@ -40,6 +40,13 @@ const Footer: React.FC<FooterProps> = ({ logo, copy, contact }) => {
                 title='Esse link leva ao meu perfil no instagram'
               >
                 <FaInstagram size={30} />
+              </Link>
+              <Link
+                href={`https://wa.me/55${contact.cellphone.replace(/\s/g, '')}`}
+                target='_blank'
+                title='Esse link leva ao meu WhatsApp'
+              >
+                <FaWhatsapp size={30} />
               </Link>
             </div>
           </div>
