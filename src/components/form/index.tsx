@@ -4,25 +4,11 @@ import styles from './form.module.css';
 import { sendContactForm } from '../../lib/sendForm';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { isEmail, isMobilePhone } from 'validator';
-
-interface ContactFormData {
-  name: string;
-  email: string;
-  cellphone: string;
-  subject: string;
-  message: string;
-}
+import { useState } from 'react';
+import { ContactFormData } from '@/types';
 
 interface FormProps {
   title: string;
-}
-
-interface FormData {
-  name: string;
-  email: string;
-  cellphone: string;
-  subject: string;
-  message: string;
 }
 
 function formatPhoneNumber(value: string): string {
@@ -60,26 +46,23 @@ function allowToEnterPhoneNumber(
 }
 
 const Form: React.FC<FormProps> = ({ title }) => {
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<ContactFormData>();
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
+  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
+    setSubmitStatus('sending');
     try {
-      const contactData: ContactFormData = {
-        name: data.name,
-        email: data.email,
-        cellphone: data.cellphone,
-        subject: data.subject,
-        message: data.message,
-      };
-      await sendContactForm(contactData);
+      await sendContactForm(data);
       reset();
+      setSubmitStatus('success');
     } catch (error) {
       console.error('Error sending contact form:', error);
+      setSubmitStatus('error');
     }
   };
 
@@ -165,7 +148,15 @@ const Form: React.FC<FormProps> = ({ title }) => {
                 )}
               </div>
               <div className={styles.mediumField}>
-                <button type='submit'>Enviar</button>
+                <button type='submit' disabled={submitStatus === 'sending'}>
+                  {submitStatus === 'sending' ? 'Enviando...' : 'Enviar'}
+                </button>
+                {submitStatus === 'success' && (
+                  <p className={styles.success_message}>Mensagem enviada com sucesso!</p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className={styles.error_message}>Erro ao enviar. Tente novamente.</p>
+                )}
               </div>
             </form>
           </div>

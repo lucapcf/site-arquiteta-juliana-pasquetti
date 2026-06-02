@@ -1,18 +1,20 @@
 import { mailOptions, transporter } from '@/utils/nodemailer';
+import { ContactFormData } from '@/types';
 
-interface ContactFormData {
-  nome: string;
-  email: string;
-  cellphone: string;
-  subject: string;
-  message: string;
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 export async function POST(req: Request) {
   const data: ContactFormData = await req.json();
 
   if (
-    !data.nome ||
+    !data.name ||
     !data.email ||
     !data.cellphone ||
     !data.subject ||
@@ -29,16 +31,16 @@ export async function POST(req: Request) {
       ...mailOptions,
       subject: data.subject,
       text:
-        `Nome: ${data.nome}\n` +
+        `Nome: ${data.name}\n` +
         `E-mail: ${data.email}\n` +
         `Celular: ${data.cellphone}\n` +
-        `_______________________________________________________________________________________________________________________________________\n` +
+        `───────────────────────────────────\n` +
         `${data.message}`,
-      html: `<p>Nome: ${data.nome}</p>
-             <p>E-mail: ${data.email}</p>
-             <p>Celular: ${data.cellphone}</p>
+      html: `<p>Nome: ${escapeHtml(data.name)}</p>
+             <p>E-mail: ${escapeHtml(data.email)}</p>
+             <p>Celular: ${escapeHtml(data.cellphone)}</p>
              <hr/>
-             <p>${data.message}</p>`,
+             <p>${escapeHtml(data.message)}</p>`,
     });
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
@@ -51,8 +53,4 @@ export async function POST(req: Request) {
       { status: 400 },
     );
   }
-}
-
-export async function OPTIONS() {
-  return new Response(null, { status: 200 });
 }

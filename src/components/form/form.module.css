@@ -128,6 +128,13 @@
   text-align: left;
 }
 
+.success_message {
+  color: #4caf50;
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 400;
+}
+
 .largeField textarea::placeholder {
   color: black;
   font-weight: 300;
