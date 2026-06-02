@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import styles from './sobre.module.css';
 import { handleJSONfile } from '../../utils/jsonHandler';
+
+export const metadata: Metadata = {
+  title: 'Sobre | Juliana Pasquetti - Arquiteta',
+  description: 'Conheça a trajetória e formação da arquiteta Juliana Pasquetti.',
+};
 
 interface About {
   title: string;
@@ -24,9 +30,9 @@ export default async function Sobre() {
           <div className={styles.container_img}>
             <Image
               src={about.image}
-              layout='fill'
+              fill
               style={{ objectFit: 'cover' }}
-              alt='foto projeto de interiores'
+              alt={about.title}
             />
           </div>
           <div className={styles.box_sobre}>
@@ -36,4 +42,4 @@ export default async function Sobre() {
       </div>
     </>
   );
-};
+}

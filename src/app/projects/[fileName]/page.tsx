@@ -1,7 +1,7 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
-import { handleJSONfile } from '../../../utils/jsonHandler';
-import { handleJSONfiles } from '../../../utils/jsonHandler';
-import { Project } from '../page';
+import { handleJSONfile, handleJSONfiles } from '../../../utils/jsonHandler';
+import { Project } from '@/types';
 import styles from './projectPage.module.css';
 
 interface ProjectPageProps {
@@ -18,6 +18,17 @@ export async function generateStaticParams() {
   return projetos.map((projeto) => ({
     fileName: projeto.fileName,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { fileName } = await params;
+  const project = await getProjectData(fileName);
+  return {
+    title: `${project.title} | Juliana Pasquetti - Arquiteta`,
+    description: project.description,
+  };
 }
 
 const ProjectPage = async ({ params }: ProjectPageProps) => {

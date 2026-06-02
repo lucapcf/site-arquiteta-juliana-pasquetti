@@ -91,6 +91,11 @@ collections:
         name: 'title'
         widget: 'string'
         pattern: ['^.{1,30}$', 'Máximo 30 carateres.']
+      - label: 'Descrição'
+        name: 'description'
+        widget: 'text'
+        pattern: ['^.{1,200}$', 'Máximo 200 caracteres.']
+        description: 'Descrição do projeto para SEO e listagens.'
       - label: 'Imagem Principal'
         name: 'mainImage'
         widget: 'image'

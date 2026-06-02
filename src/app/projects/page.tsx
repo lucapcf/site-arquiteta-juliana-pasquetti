@@ -1,14 +1,12 @@
+import type { Metadata } from 'next';
 import GridProjetos from '../../components/projectsGrid';
-import { handleJSONfiles } from '../../utils/jsonHandler';
-import { handleJSONfile } from '../../utils/jsonHandler';
+import { handleJSONfiles, handleJSONfile } from '../../utils/jsonHandler';
+import { Project } from '@/types';
 
-export interface Project {
-  fileName: string;
-  title: string;
-  description: string;
-  mainImage: string;
-  projectImages: { image: string }[];
-}
+export const metadata: Metadata = {
+  title: 'Projetos | Juliana Pasquetti - Arquiteta',
+  description: 'Conheça os projetos residenciais e comerciais da arquiteta Juliana Pasquetti.',
+};
 
 interface ProjectsPage {
   title: string;

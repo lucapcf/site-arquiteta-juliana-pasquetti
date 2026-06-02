@@ -1,12 +1,12 @@
+import type { Metadata } from 'next';
 import ServicesGrid from '../../components/servicesGrid';
-import { handleJSONfile } from '../../utils/jsonHandler';
-import { handleJSONfiles } from '../../utils/jsonHandler';
+import { handleJSONfile, handleJSONfiles } from '../../utils/jsonHandler';
+import { Service } from '@/types';
 
-export interface Service {
-  title: string;
-  image: string;
-  description: string;
-}
+export const metadata: Metadata = {
+  title: 'Serviços | Juliana Pasquetti - Arquiteta',
+  description: 'Serviços de arquitetura oferecidos por Juliana Pasquetti: consultoria, coordenação de obras e mais.',
+};
 
 interface ServicesPage {
   title: string;

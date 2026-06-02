@@ -1,4 +1,7 @@
 {
+  "title": "Axis Psiquiatria",
+  "description": "Projeto comercial para clínica de psiquiatria, criando ambientes acolhedores e profissionais que transmitem tranquilidade e confiança.",
+  "mainImage": "/uploads/img-20171229-wa0015.jpg",
   "projectImages": [
     {
       "image": "/uploads/img-20171017-wa0022.jpg"
@@ -21,7 +24,5 @@
     {
       "image": "/uploads/img-20171229-wa0010.jpg"
     }
-  ],
-  "title": "Axis Psiquiatria",
-  "mainImage": "/uploads/img-20171229-wa0015.jpg"
+  ]
 }
