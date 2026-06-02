@@ -1,8 +1,17 @@
 import React, { ReactNode } from 'react';
+import { Montserrat } from 'next/font/google';
 import '../styles/global.css';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import { handleJSONfile } from '@/utils/jsonHandler';
+import { Contact } from '@/types';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
 
 export const metadata = {
   title: 'Juliana Pasquetti - Arquiteta',
@@ -41,16 +50,6 @@ interface NavFooter {
   copy: string;
 }
 
-export interface Contact {
-  name: string;
-  linkedin: string;
-  email: string;
-  instagram: string;
-  facebook: string;
-  cellphone: string;
-  address: string;
-}
-
 async function getData(): Promise<{ navFooter: NavFooter; contact: Contact }> {
   const navFooter = await handleJSONfile<NavFooter>(
     './content/navFooter/navFooter.json',
@@ -69,7 +68,7 @@ export default async function RootLayout({
   const { navFooter, contact } = await getData();
 
   return (
-    <html lang='en'>
+    <html lang='pt-BR'>
       <head>
         <script
           async
@@ -78,7 +77,7 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
       </head>
-      <body>
+      <body className={montserrat.variable}>
         <Navbar
           logoNavbar={navFooter.logoNavbar}
           logoNavbarMobile={navFooter.logoNavbarMobile}
