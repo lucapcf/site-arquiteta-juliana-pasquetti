@@ -1,5 +1,4 @@
 import styles from './page.module.css';
-import '../styles/global.css';
 import { handleJSONfile } from '@/utils/jsonHandler';
 import React from 'react';
 
@@ -18,19 +17,19 @@ export default async function Home() {
 
   return (
     <>
-      <center>
-        <div className={styles.hero}>
-          <video
-            autoPlay
-            loop
-            muted
-            id='video_pagina_inicial'
-            className={styles.video}
-          >
-            <source src={home.video} type='video/mp4' />
-          </video>
-        </div>
-      </center>
+      <div className={styles.hero}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload='auto'
+          id='video_pagina_inicial'
+          className={styles.video}
+        >
+          <source src={home.video} type='video/mp4' />
+        </video>
+      </div>
       <div className={styles.text}>{home.text}</div>
     </>
   );

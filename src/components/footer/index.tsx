@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './footer.module.css';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { Contact } from '../../app/layout';
+import { Contact } from '@/types';
 
 interface FooterProps {
   logo: string;

@@ -1,6 +1,6 @@
 import CardProjeto from '../projectCard';
 import styles from './projectsGrid.module.css';
-import { Project } from '../../app/projects/page';
+import { Project } from '@/types';
 
 interface ProjectsGridProps {
   projects: Project[];
