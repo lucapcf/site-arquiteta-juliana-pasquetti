@@ -3,10 +3,12 @@
 import fs from 'fs';
 import path from 'path';
 
+const CONTENT_DIR = path.join(process.cwd(), 'content');
+
 export async function handleJSONfiles<T>(
   filePath: string,
 ): Promise<(T & { fileName: string })[]> {
-  const absolutePath = path.join(process.cwd(), filePath);
+  const absolutePath = path.join(CONTENT_DIR, filePath);
   const items: (T & { fileName: string })[] = [];
 
   let files: string[];
@@ -43,7 +45,7 @@ export async function handleJSONfiles<T>(
  * @param filePath Path to the file relative to the project root
  */
 export async function handleJSONfile<T>(filePath: string): Promise<T> {
-  const absolutePath = path.join(process.cwd(), filePath);
+  const absolutePath = path.join(CONTENT_DIR, filePath);
 
   try {
     const fileData = await fs.promises.readFile(absolutePath, 'utf-8');

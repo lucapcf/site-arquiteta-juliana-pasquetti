@@ -8,7 +8,7 @@ interface Home {
 }
 
 async function getData(): Promise<{ home: Home }> {
-  const home = await handleJSONfile<Home>('./content/pages/home.json');
+  const home = await handleJSONfile<Home>('pages/home.json');
   return { home };
 }
 

@@ -15,7 +15,7 @@ interface About {
 }
 
 async function getData(): Promise<{ about: About }> {
-  const about = await handleJSONfile<About>('./content/pages/about.json');
+  const about = await handleJSONfile<About>('pages/about.json');
   return { about };
 }
 

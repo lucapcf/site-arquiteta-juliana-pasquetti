@@ -9,11 +9,11 @@ interface ProjectPageProps {
 }
 
 async function getProjectData(fileName: string): Promise<Project> {
-  return await handleJSONfile<Project>(`content/projects/${fileName}.json`);
+  return await handleJSONfile<Project>(`projects/${fileName}.json`);
 }
 
 export async function generateStaticParams() {
-  const projetos = await handleJSONfiles('content/projects');
+  const projetos = await handleJSONfiles('projects');
 
   return projetos.map((projeto) => ({
     fileName: projeto.fileName,

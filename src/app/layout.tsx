@@ -52,10 +52,10 @@ interface NavFooter {
 
 async function getData(): Promise<{ navFooter: NavFooter; contact: Contact }> {
   const navFooter = await handleJSONfile<NavFooter>(
-    './content/navFooter/navFooter.json',
+    'navFooter/navFooter.json',
   );
   const contact = await handleJSONfile<Contact>(
-    './content/contact/contact.json',
+    'contact/contact.json',
   );
   return { navFooter, contact };
 }

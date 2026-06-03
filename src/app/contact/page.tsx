@@ -12,7 +12,7 @@ export interface FormData {
 }
 
 async function getData(): Promise<{ form: FormData }> {
-  const form = await handleJSONfile<FormData>('./content/form/form.json');
+  const form = await handleJSONfile<FormData>('form/form.json');
   return { form };
 }
 

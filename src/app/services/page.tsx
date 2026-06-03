@@ -17,9 +17,9 @@ async function getData(): Promise<{
   services: Service[];
 }> {
   const services_page = await handleJSONfile<ServicesPage>(
-    './content/pages/services.json',
+    'pages/services.json',
   );
-  const services = await handleJSONfiles<Service>('./content/services');
+  const services = await handleJSONfiles<Service>('services');
   return { services_page, services };
 }
 
